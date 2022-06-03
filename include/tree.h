@@ -5,7 +5,7 @@
 #include <vector>
 
 class Tree {
-  private:
+ private:
       struct Node {
           char data;
           std::vector<Node*> leav;
@@ -20,7 +20,7 @@ class Tree {
               for (auto i = tmp.begin(); i != tmp.end(); i++) {
                   if (*i ==root->value) {
                       tmp.erase(i);
-                      break;'
+                      break;
                   }
               }
           }
@@ -43,7 +43,7 @@ class Tree {
               Permutation(root->leav[i], s);
           }
       }
-  public:
+ public:
       std::string oper[](int i) const {
           if (i >= init_s.size()) {
               return "";
@@ -57,6 +57,4 @@ class Tree {
           Permutation(root);
       }
 };
-  
-
 #endif  // INCLUDE_TREE_H_
