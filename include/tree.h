@@ -18,16 +18,16 @@ class Tree {
           }
           if (root->data != '*') {
               for (auto i = tmp.begin(); i != tmp.end(); i++) {
-                  if (*i ==root->value) {
+                  if (*i == root->data) {
                       tmp.erase(i);
                       break;
                   }
               }
           }
-        for (size_t i = 0; i < way.size(); i++) {
+        for (size_t i = 0; i < tmp.size(); i++) {
             root->leav.push_back(new Node);
-            root->leav[i]->value = tmp[i];
-            build_Tree(root->list[i], tmp);
+            root->leav[i]->data = tmp[i];
+            build_Tree(root->leav[i], tmp);
         }
       }
       void Permutation(Node* root, std::string s = "") {
@@ -36,7 +36,7 @@ class Tree {
             init_s.push_back(s);
             return;
           }
-          if (root->value != '*') {
+          if (root->data != '*') {
               s += root->data;
           }
           for (size_t i = 0; i < root->leav.size(); i++) {
