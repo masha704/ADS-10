@@ -43,7 +43,7 @@ class Tree {
               Permutation(root->leav[i], s);
           }
       }
- 
+
  public:
       std::string oper[](int i) const {
           if (i >= init_s.size()) {
