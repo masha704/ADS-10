@@ -11,7 +11,7 @@ class Tree {
           std::vector<Node*> leav;
       };
       Node* root;
-      std::vector<char> init_s;
+      std::vector<std::string> init_s;
       void build_Tree(Node* root, std::vector<char> tmp) {
           if (!tmp.size()) {
               return;
@@ -30,7 +30,7 @@ class Tree {
             build_Tree(root->list[i], tmp);
         }
       }
-      void Permutation(Node* root, char s = '') {
+      void Permutation(Node* root, std::string s = "") {
           if (!root->leav.size()) {
             s += root->data;
             init_s.push_back(s);
@@ -45,7 +45,7 @@ class Tree {
       }
 
  public:
-      std::string oper[](int i) const {
+      std::string operator[](int i) const {
           if (i >= init_s.size()) {
               return "";
           }
